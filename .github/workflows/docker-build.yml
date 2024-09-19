@@ -28,7 +28,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -f Dockerfile --build-arg UID=$(id -u) --build-arg GID=$(id -g) -t ghcr.io/jaafar-g/zephyr:latest .
+        docker build -f docker-image/Dockerfile.devel --build-arg UID=$(id -u) --build-arg GID=$(id -g) -t ghcr.io/jaafar-g/zephyr:latest .
 
     - name: Push Docker image to GHCR
       run: |
