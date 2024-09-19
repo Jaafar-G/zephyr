@@ -21,12 +21,12 @@ RUN apt-get clean -y && \
 	rm -rf /var/lib/apt/lists/*
 
 # Add entrypoint script
-ADD ./entrypoint.sh /home/user/entrypoint.sh
+ADD ./docker-image/entrypoint.sh /home/user/entrypoint.sh
 RUN dos2unix /home/user/entrypoint.sh
 ENTRYPOINT ["/home/user/entrypoint.sh"]
 
 # Add bash completion script
-ADD ./bash_completion /home/user/.bash_completion
+ADD ./docker-image/bash_completion /home/user/.bash_completion
 RUN mkdir -p /home/user/.bash_completion.d
 
 # Switch to 'user' context
